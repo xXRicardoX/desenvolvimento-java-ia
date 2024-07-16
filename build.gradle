@@ -30,6 +30,16 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+// Configurando a main para rodar em nuvem pt1
+tasks.jar{
+	manifest {
+		attributes 'Main-Class': 'me.dio.Application'
+
+	}
+}
+// parte 02 criar um arquivo "profile" e adicionar o seguinte conteudo  "web: java -jar "Caminho da buld do arquivo da pasta libs "
+// parte 03 "para rodar na rails pode ser que não funcione do gradle a partir da versão 8.0.0, então é necessário colocar na versão 7.6.1
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
